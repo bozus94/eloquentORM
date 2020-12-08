@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Post;
+use App\Video;
 use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model

@@ -2,6 +2,9 @@
 
 namespace App;
 
+use App\Post;
+use App\User;
+use App\Video;
 use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model

@@ -14,6 +14,7 @@ class Category extends Model
         //hasMany => tiene muchos
         return $this->hasMany(Post::class);
     }
+
     public function videos()
     {
         //Relacion uno a muchos

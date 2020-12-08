@@ -2,8 +2,10 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Post;
 use App\User;
+use App\Video;
+use Illuminate\Database\Eloquent\Model;
 
 class Level extends Model
 {

@@ -2,8 +2,12 @@
 
 namespace App;
 
+use App\Post;
 use App\Group;
+use App\Image;
 use App\Level;
+use App\Video;
+use App\Comment;
 use App\Profile;
 use App\Location;
 use Illuminate\Notifications\Notifiable;
@@ -65,10 +69,11 @@ class User extends Authenticatable
 
     public function Location()
     {
-        //Relacion uno a uno
+        //Relacion uno a uno atrasves de
         //hasOneThrough => tiene uno atraves de
         return $this->hasOneThrough(Location::class, Profile::class);
     }
+
     public function posts()
     {
         //Relacion uno a muchos
@@ -80,6 +85,20 @@ class User extends Authenticatable
     {
         //Relacion uno a muchos
         //hasMany => tiene muchos 
-        return $this->hasMany(Post::class);
+        return $this->hasMany(Video::class);
+    }
+
+    public function image()
+    {
+        //Relacion polimorfica uno a uno
+        //MorphOne => tiene uno 
+        return $this->MorphOne(Image::class, 'imageable');
+    }
+
+    public function comments()
+    {
+        //Relacion uno a muchos
+        //hasMany => tiene muchos 
+        return $this->hasMany(Commentd::class);
     }
 }
